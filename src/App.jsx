@@ -14,7 +14,7 @@ const App = () => {
     const alturaBox = box.clientHeight;
 
     const maxX = larguraBox - botaoNao.offsetWidth - 100; // 10px de margem
-    const maxY = alturaBox - botaoNao.offsetHeight - 500;
+    const maxY = alturaBox - botaoNao.offsetHeight;
 
     const aleatorioX = Math.max(0, Math.floor(Math.random() * maxX)); // 10px de margem
     const aleatorioY = Math.max(0, Math.floor(Math.random() * maxY));
@@ -39,7 +39,7 @@ const App = () => {
         sx={{
           backgroundColor: "white",
           width: 500,
-          height: 600,
+          height: 500,
           borderRadius: 2,
           textAlign: "center",
           paddingTop: 5,

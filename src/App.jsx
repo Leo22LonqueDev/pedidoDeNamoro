@@ -77,6 +77,7 @@ const App = () => {
             color="error"
             id="nao"
             onMouseOver={fuja}
+            onClick={fuja}
             sx={{
               height: 40,
               width: 60,

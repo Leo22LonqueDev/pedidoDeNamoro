@@ -48,14 +48,14 @@ const App = () => {
           overflow: "hidden",
         }}
       >
-        <Typography variant="h1">Boa noite</Typography>
+        <Typography variant="h3">Boa noite</Typography>
         <img
           src="https://images7.memedroid.com/images/UPLOADED675/5e2d5388b027d.jpeg"
           alt=""
-          width="400px"
+          width="350px"
         />
         <Typography variant="h5">Aceita sair comigo?</Typography>
-        <Box sx={{ position: "relative", height: 100 }}>
+        <Box >
           <Button
             variant="contained"
             color="error"
@@ -64,8 +64,8 @@ const App = () => {
               height: 40,
               width: 60,
               backgroundColor: "red",
-              border: "2px solid white",
-              borderRadius: 1,
+              border: "2px solid black",
+              borderRadius: 10,
               color: "white",
               marginRight: 3,
             }}
@@ -82,8 +82,8 @@ const App = () => {
               height: 40,
               width: 60,
               backgroundColor: "red",
-              border: "2px solid white",
-              borderRadius: 1,
+              border: "2px solid black",
+              borderRadius: 10,
               color: "white",
               position: "absolute",
               transition: "transform 0.2s ease-in-out",

@@ -2,22 +2,22 @@ import React, { useRef } from "react";
 import { Box, Button, Container, Typography } from "@mui/material";
 
 const App = () => {
-  const containerRef = useRef(null);
+  const boxRef = useRef(null);
 
   const fuja = () => {
     const botaoNao = document.getElementById("nao");
-    const container = containerRef.current;
+    const box = boxRef.current;
 
-    if (!botaoNao || !container) return;
+    if (!botaoNao || !box) return;
 
-    const larguraContainer = container.clientWidth - 1500;
-    const alturaContainer = container.clientHeight - 1500;
+    const larguraBox = box.clientWidth;
+    const alturaBox = box.clientHeight;
 
-    const maxX = larguraContainer - botaoNao.offsetWidth;
-    const maxY = alturaContainer - botaoNao.offsetHeight;
+    const maxX = larguraBox - botaoNao.offsetWidth - 100; // 10px de margem
+    const maxY = alturaBox - botaoNao.offsetHeight - 500;
 
-    const aleatorioX = Math.floor(Math.random() * maxX);
-    const aleatorioY = Math.floor(Math.random() * maxY);
+    const aleatorioX = Math.max(0, Math.floor(Math.random() * maxX)); // 10px de margem
+    const aleatorioY = Math.max(0, Math.floor(Math.random() * maxY));
 
     botaoNao.style.left = `${aleatorioX}px`;
     botaoNao.style.top = `${aleatorioY}px`;
@@ -25,18 +25,17 @@ const App = () => {
 
   return (
     <Container
-      ref={containerRef}
-      maxWidth
+      maxWidth={false}
       sx={{
         backgroundColor: "red",
         height: "100vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        overflow: 'hidden',
       }}
     >
       <Box
+        ref={boxRef}
         sx={{
           backgroundColor: "white",
           width: 500,
@@ -46,6 +45,7 @@ const App = () => {
           paddingTop: 5,
           fontFamily: "Franklin Gothic Medium, Arial Narrow, Arial, sans-serif",
           position: "relative",
+          overflow: "hidden",
         }}
       >
         <Typography variant="h1">Boa noite</Typography>
@@ -76,8 +76,8 @@ const App = () => {
             variant="contained"
             color="error"
             id="nao"
-            onMouseOver={fuja}
-            onClick={fuja}
+            onMouseOver={fuja} // Funciona no PC
+            onClick={fuja} // Funciona no celular
             sx={{
               height: 40,
               width: 60,
@@ -86,6 +86,7 @@ const App = () => {
               borderRadius: 1,
               color: "white",
               position: "absolute",
+              transition: "transform 0.2s ease-in-out",
             }}
           >
             Não!

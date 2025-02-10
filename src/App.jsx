@@ -10,8 +10,8 @@ const App = () => {
 
     if (!botaoNao || !container) return;
 
-    const larguraContainer = container.clientWidth - 1100;
-    const alturaContainer = container.clientHeight - 1100;
+    const larguraContainer = container.clientWidth - 1500;
+    const alturaContainer = container.clientHeight - 1500;
 
     const maxX = larguraContainer - botaoNao.offsetWidth;
     const maxY = alturaContainer - botaoNao.offsetHeight;
